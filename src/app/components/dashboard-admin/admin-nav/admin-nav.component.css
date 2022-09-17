@@ -1,0 +1,23 @@
+#navAdm{  
+  display: flex;
+justify-content:space-around;
+  text-transform:none;
+}
+
+a:hover{
+background:rgb(196, 114, 114); 
+border-radius: 5px;
+}
+a{
+  color:rgb(255, 255, 255);
+  font-size: large;
+  font-weight: 400;
+  
+}
+#item{
+  color:rgb(12, 43, 100);
+  font-size: larg;
+  font-weight: 500;
+}
+
+

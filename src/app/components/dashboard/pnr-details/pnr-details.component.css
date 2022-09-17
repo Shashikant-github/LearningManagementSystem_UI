@@ -1,0 +1,42 @@
+.container1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 8px;
+    padding:5px;
+  }
+  .pnrform{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+.cards-layout{
+    display:flex;
+    flex-wrap: wrap;
+   justify-content:space-around;
+} 
+.errorInvalid{
+    color:red;
+    text-align: center;
+    text-transform: uppercase;
+}
+input.ng-invalid.ng-touched{  
+    border:1px solid red;  
+    }  
+   button:hover{
+      color:indianred;
+  }
+  .card-img-top {
+    width: 100%;
+    height: 5vw;
+    object-fit: cover;
+  }
+  .card{
+    box-shadow: 5px 10px 5px #d8a3a3;
+}
+.download{
+  display:flex;
+  align-items: center;
+  justify-content:space-around;
+}

@@ -1,0 +1,36 @@
+.loginform{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.shadow1{
+  border-radius: 5px;
+  margin-top:0%;
+  box-shadow: 10px 10px 5px 2px rgb(196, 117, 117);
+}
+.errorInvalid{
+    color:red;
+    text-align: center;
+    text-transform: uppercase;
+}
+.container1{
+  display: flex;
+  justify-content: space-around;
+  margin: 8px;
+}
+a:hover{
+    background-color:lightcoral;
+        opacity: 0.8;
+        border-radius: 2px;
+  }
+  p{
+    color:indianred;
+    font-weight: bolder;
+    font-size: large;
+    text-transform: uppercase;
+ 
+  }
+  input.ng-invalid.ng-touched{  
+    border:1px solid red;  
+    }  

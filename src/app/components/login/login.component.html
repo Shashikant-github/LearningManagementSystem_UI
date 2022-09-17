@@ -1,0 +1,59 @@
+<div class="loginform">
+  <div class="shadow1">
+    <br>
+  <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)"> 
+      <div class="container1"><p>Login</p></div>
+      <div class="container1">        
+            <input
+              type="text"
+              class="form-control"
+              id="inputName"
+              required
+              placeholder="Email"
+              name="userName"
+              [(ngModel)]="userInfo.UserIEmailID"
+              #userName="ngModel"
+            /></div>
+         
+            <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+        class="alert">
+      <div class="errorInvalid" *ngIf="userName.errors?.['required']">
+        Email is required.
+      </div>
+          
+        </div>
+    <div class="container1">
+          <input
+          type="password"
+          name="password"
+          class="form-control"
+          required
+          id="exampleInputPassword"
+          placeholder="Password"
+          [(ngModel)]="userInfo.UserIPassword" 
+          #password="ngModel"
+        /></div>
+       
+      <div *ngIf="password.invalid && (password.dirty || password.touched)"
+    class="alert">
+  <div class="errorInvalid" *ngIf="password.errors?.['required']">
+    Password is required.
+  </div>
+      </div>
+    <div class="container1">
+      <button type="submit" class="btn btn-primary" id="btn-register" [disabled]="!loginForm.valid">Login</button>
+    </div>
+    <div class="container1">
+      <a routerLink="/register"  (onclick)="register()">New User? Click here to register</a>
+    </div>
+    <div class="container1" >
+      <div class="errorInvalid">{{ Invalid }}</div>
+    </div>
+  </form>
+  </div>
+</div>
+<br>
+
+
+<!-- UserIName?:string;
+UserIPassword?:string; -->

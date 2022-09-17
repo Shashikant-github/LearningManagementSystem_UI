@@ -1,0 +1,46 @@
+<!-- <p>{{customExMessage}}</p> -->
+<div class="panel">
+    <mat-expansion-panel  class="disable_ripple">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="title">
+                Add Course Details
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Course Name</mat-label>
+            <input matInput [(ngModel)]="courseObj.courseName">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Technology</mat-label>
+            <input matInput [(ngModel)]="courseObj.technology">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Course Duration</mat-label>
+            <input matInput [(ngModel)]="courseObj.courseDuration">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Course LaunchURL</mat-label>
+            <input matInput [(ngModel)]="courseObj.courseLaunchURL">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Course Start Date</mat-label>
+            <input matInput  [(ngModel)]="courseObj.courseStartDate">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Course End Date</mat-label>
+            <input matInput [(ngModel)]="courseObj.courseEndDate">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Course Description</mat-label>
+            <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5" [(ngModel)]="courseObj.courseDescription"></textarea>
+            <!-- <input matInput type="text" [(ngModel)]="flightObj.destination"> -->
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="warn" (click)="addCourse()">Add Course</button>
+    </mat-expansion-panel>
+</div>
+<br>

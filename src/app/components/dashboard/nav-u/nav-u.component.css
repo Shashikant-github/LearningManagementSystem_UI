@@ -1,0 +1,24 @@
+#navUser{  
+  display: flex;
+  align-items: center;
+justify-content:space-around;
+  text-transform: none;
+}
+
+a:hover{
+background:rgb(235, 144, 144); 
+border-radius: 5px;
+}
+a{
+  color:rgb(255, 255, 255);
+  font-size: large;
+  font-weight: 400;
+  
+}
+#item{
+  color:rgb(13, 15, 126);
+  font-size: larg;
+  font-weight: 500;
+}
+
+

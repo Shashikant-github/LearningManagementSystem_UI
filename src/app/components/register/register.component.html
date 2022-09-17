@@ -1,0 +1,91 @@
+<div class="registerForm">
+  <form #registerForm1="ngForm" (ngSubmit)="registerUserDetails(registerForm1)">
+    <div class="container1"><p>Registration</p></div>
+    <div class="container1">
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputText"    
+        placeholder="Please Enter Username"
+        name="userName"
+        [(ngModel)]="registeredUser.userName"
+        required
+        #userName="ngModel"
+      />
+      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+    class="alert">
+  <div class="errorInvalid" *ngIf="userName.errors?.['required']">
+    Username is required.
+  </div></div>
+      
+    
+    <div class="container1">
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Please Enter Password"
+        [(ngModel)]="registeredUser.password"
+        required
+        #password="ngModel"
+      /></div>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="password.errors?.['required']">
+      Password is required.
+    </div>
+        </div>
+    <div class="container1">
+      <input
+        type="email"
+        name="emailID"
+        class="form-control"
+        id="exampleInputEmail"
+        placeholder="Please Enter EmailID"
+        [(ngModel)]="registeredUser.emailID"
+        required
+        #email="ngModel"
+      />
+    </div>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+    class="alert">
+  <div class="errorInvalid" *ngIf="email.errors?.['required']">
+    Email is required.
+  </div>
+      </div>
+  <div class="container1">
+      <input
+        type="number"
+        name="mobile"
+        class="form-control"
+        id="exampleInputMobile"
+        placeholder="Please Enter Mobile No."
+        [(ngModel)]="registeredUser.mobile"
+        required
+        #mobile="ngModel"
+      /></div>
+      <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="mobile.errors?.['required']">
+      Mobile no. is required.
+    </div>
+        </div>
+    <div class="container1">
+      <button type="submit" class="btn btn-primary" id='btn-register' [disabled]="!registerForm1.valid">Register</button></div>
+      <div class="container1"><a routerLink="/login" id='btn-register'>Click here to Login</a></div>
+    <br> 
+  </form>
+</div>
+
+          
+<!--UserName?:string;
+City?:string;
+Password?:string;
+role?:string;
+public int Mobile { get; set; }
+        public string emailID { get; set; }
+        public string Address { get; set; }
+        #endregion -->

@@ -1,0 +1,31 @@
+.registerForm{
+  display: flex;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+min-width: auto;
+}
+.container1{
+  display: flex;
+  justify-content: space-around;
+  margin: 8px;
+}
+
+p{color:indianred;
+  font-weight: bolder;
+  font-size: medium;
+  text-transform: uppercase;
+}
+.errorInvalid{
+  color:red;
+  text-align: center;
+  text-transform: uppercase;
+}
+input.ng-invalid.ng-touched{  
+  border:1px solid red;  
+  }  
+  a:hover{
+    background-color:lightcoral;
+        opacity: 0.8;
+        border-radius: 2px;
+  }

@@ -1,0 +1,88 @@
+<h3 class="pnrform">
+  <form> 
+    <div class="container1">
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPNR"
+        placeholder="Please Enter PNR"
+        required
+        name="bookingPNR"
+        [(ngModel)]="bookingPNR"
+        #bookingPNR1="ngModel"
+      /> 
+      <div *ngIf="bookingPNR1.invalid && (bookingPNR1.dirty ||bookingPNR1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingPNR1.errors?.['required']">
+      PNR is required.
+    </div></div>
+    <div class="container1">
+    <button type="button" class="btn btn-primary" (click)="searchByPNR()" >
+      Search
+    </button>
+  </div>
+    </div>
+</form>
+</h3>
+<div class="download"><input type="button" value="Download Ticket"  *ngIf="isShown" class="btn btn-success" (click)="SavePDF()"></div><br>
+<div class="cards-layout">
+ 
+  <div class="card mb-3 w-23" *ngIf="isShown"  >
+    <img class="card-img-top" src="https://www.thalesgroup.com/sites/default/files/gemalto/donnees-PNR.jpg" alt="PNR">
+    <div class="card-body" #content>
+      <!-- <h2 style="text-align: center; text-decoration: underline;">PNR STATUS</h2> -->
+      <h5 class="card-title"><b>PNR:-</b>{{ book.bookingPNR }}</h5>
+      <h5 class="card-title"><b>Passenger Name:-</b> {{ book.bookingPassengerName}}</h5>
+      <h5 class="card-title"><b>Mobile No.:- </b>{{ book.mobile }}</h5>
+       <h5 class="card-title"><pre><b>Airline:-</b> {{ book.airline }}   <b>Flight Code:- </b>{{ book.airlineCode }}</pre></h5>
+      <h5 class="card-title"><pre><b>Source:- </b>{{ book.source }}   <b>Destination:</b> {{ book.destination }}</pre></h5>   
+      <h5 class="card-title"><b>Date Of Journey:- </b> {{ book.dateOfJourney }}</h5>
+      <h5 class="card-title"><b>Date Of Booking:- </b> {{ book.bookingDate }}</h5>
+      <h5 class="card-title"><p><b>Email ID:- </b>{{ book.emailID }}   <b>Ticket Status:- </b> {{ book.ticketStatus }}</p></h5>
+      
+    </div>
+  </div>
+  </div>
+
+<!-- <div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">PNR</th>
+        <th scope="col">PassengerName</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Airline</th>
+        <th scope="col">Date Of Journey</th>
+        <th scope="col">Date Of Booking</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">Ticket Status</th>
+      </tr>
+    </thead>
+      <tbody>
+      <tr>
+        <td>{{ book.bookingPNR }}</td>
+        <td>{{ book.bookingPassengerName }}</td>
+        <td>{{ book.mobile }}</td>
+        <td>{{ book.source }}</td>
+        <td>{{ book.destination }}</td>
+        <td>{{ book.airline }}</td>
+        <td>{{ book.dateOfJourney }}</td>
+        <td>{{ book.bookingDate }}</td>
+        <td>{{ book.emailID }}</td>
+        <td>{{ book.ticketStatus }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+  <!-- bookingPNR?:string;
+    bookingPassengerName?:string;
+    mobile?:string;
+    source?:string;
+    destination?:string;
+    airline?:string;
+    dateOfJourney?:string;
+    emailID?:string;
+    ticketStatus?:string; -->

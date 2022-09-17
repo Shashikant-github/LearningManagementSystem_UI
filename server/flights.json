@@ -1,0 +1,74 @@
+{
+  "flights": [
+    {
+      "id": 1,
+      "name": "Go",
+      "price": 7000
+    },
+    {
+      "id": 2,
+      "name": "Jet",
+      "price": 9000
+    },
+    {
+      "id": 3,
+      "name": "IndiGo",
+      "price": 3000
+    },
+    {
+      "name": "rr",
+      "price": "778",
+      "id": 4
+    },
+    {
+      "name": "rfgjjr",
+      "price": "777778jj8",
+      "id": 5
+    },
+    {
+      "name": "rfgjjr",
+      "price": "777778jj8",
+      "id": 6
+    },
+    {
+      "name": "rfgjjr",
+      "price": "777778jj8",
+      "id": 7
+    },
+    {
+      "name": "rfgjjr",
+      "price": "777778jj8",
+      "id": 8
+    },
+    {
+      "name": "rfgjjr",
+      "price": "777778jj8",
+      "id": 9
+    },
+    {
+      "name": "Hum",
+      "price": "8909",
+      "id": 10
+    },
+    {
+      "name": "Hum",
+      "price": "8909",
+      "id": 11
+    },
+    {
+      "name": "dd",
+      "price": "34",
+      "id": 12
+    },
+    {
+      "name": "33",
+      "price": "44",
+      "id": 13
+    },
+    {
+      "name": "33",
+      "price": "dd",
+      "id": 14
+    }
+  ]
+}

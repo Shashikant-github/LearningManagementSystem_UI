@@ -1,0 +1,79 @@
+<h3 class="historyForm">
+    <form >
+      <div class="container1">
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmailID"
+          placeholder="Please Enter email ID"
+          name="bookingEmail"
+          [(ngModel)]="bookingEmail"
+          #email="ngModel"
+          required
+        />
+        <div *ngIf="email.invalid && (email.dirty ||email.touched)"
+        class="alert">
+      <div class="errorInvalid" *ngIf="email.errors?.['required']">
+        Email is required.
+      </div></div>
+        <div class="container1"><button type="button" class="btn btn-primary" (click)="historyByEmail(bookingEmail)">
+          Search
+      </button></div>  
+      </div>
+    </form>
+  </h3>
+
+  <!-- [(ngModel)]="bookingEmail" -->
+
+  <div class="cards-layout" >
+    <div class="card mb-3 w-30" *ngFor="let booking of book">
+      <img class="card-img-top" *ngIf="booking.ticketStatus=='Cancelled'||booking.ticketStatus=='CANCELLED'" src="https://image.shutterstock.com/image-vector/cancelled-stamp-square-grunge-sign-260nw-1726532743.jpg" alt="BookingHistory">
+      <img class="card-img-top" *ngIf="booking.ticketStatus=='BOOKED'||booking.ticketStatus=='Booked'" src="https://theskincaremillionaire.typepad.com/.a/6a01116888abb7970c01a73d8adffd970d-800wi" alt="BookingHistory">
+      <div class="card-body" >
+        <h4 class="card-title"><pre><b>PNR:-</b>{{ booking.bookingPNR }} </pre></h4>
+        <h4 class="card-title"><b>Passenger Name:-</b> {{ booking.bookingPassengerName}}</h4>
+        <h4 class="card-title"><b>Mobile No.:- </b>{{ booking.mobile }}</h4>
+         <h4 class="card-title"><pre><b>Airline:-</b> {{ booking.airline }}   <b>Flight Code:- </b>{{ booking.airlineCode }}</pre></h4>
+        <h4 class="card-title"><pre><b>Source:- </b>{{ booking.source }}   <b>Destination:</b> {{ booking.destination }}</pre></h4>
+  
+        <h4 class="card-title"><b>Date Of Journey:- </b> {{ booking.dateOfJourney }}</h4>
+        <h4 class="card-title"><b>Date Of Booking:- </b> {{ booking.bookingDate }}</h4>
+        <h4 class="card-title"><b>Email ID:- </b>{{ booking.emailID }}   <b>Ticket Status:- </b> {{ booking.ticketStatus }}</h4>
+        <h4 class="card-title"><a type="submit"  class="btn btn-danger" *ngIf="booking.ticketStatus=='BOOKED'||booking.ticketStatus=='Booked'"  (click)="cancelBooking(booking.bookingPNR)" ><b>Cancel Ticket</b></a></h4>
+      </div>
+    </div>
+    </div>
+  <!-- <div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          (click)="cancelBooking(booking.bookingPNR)"
+          <th scope="col">PNR</th>
+          <th scope="col">PassengerName</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Source</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Airline</th>
+          <th scope="col">Date Of Journey</th>
+          <th scope="col">Date Of Booking</th>
+          <th scope="col">Email ID</th>
+          <th scope="col">Ticket Status</th>
+        </tr>
+      </thead>
+
+        <tbody *ngFor="let booking of book">
+        <tr>
+          <td>{{ booking.bookingPNR }}</td>
+          <td>{{ booking.bookingPassengerName }}</td>
+          <td>{{ booking.mobile }}</td>
+          <td>{{ booking.source }}</td>
+          <td>{{ booking.destination }}</td>
+          <td>{{ booking.airline }}</td>
+          <td>{{ booking.dateOfJourney }}</td>
+          <td>{{ booking.bookingDate }}</td>
+          <td>{{ booking.emailID }}</td>
+          <td>{{ booking.ticketStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->

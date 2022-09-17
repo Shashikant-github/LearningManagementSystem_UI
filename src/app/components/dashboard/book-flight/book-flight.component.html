@@ -1,0 +1,183 @@
+<div class="bookingForm" *ngIf="isShownForm">
+  <form #bookForm="ngForm" (ngSubmit)="bookingDetails(bookForm)">
+    <div class="container1"><p>Booking</p></div>
+    <div class="container1">
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassenger"
+        placeholder="Please Enter Passenger Name"
+        name="bookingPassengerName"
+        [(ngModel)]="bookTicket.bookingPassengerName"
+        #bookingPassengerName="ngModel"
+        required
+      />
+    </div>
+    <div
+      *ngIf="
+        bookingPassengerName.invalid &&
+        (bookingPassengerName.dirty || bookingPassengerName.touched)
+      "
+      class="alert"
+    >
+      <div
+        class="errorInvalid"
+        *ngIf="bookingPassengerName.errors?.['required']"
+      >
+        Name is required.
+      </div>
+    </div>
+
+    <div class="container1">
+      <input
+        type="number"
+        name="mobile"
+        class="form-control"
+        id="exampleInputMobile"
+        placeholder="Please Enter Mobile No."
+        [(ngModel)]="bookTicket.mobile"
+        #mobile="ngModel"
+        required
+      />
+    </div>
+    <div
+      *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)"
+      class="alert"
+    >
+      <div class="errorInvalid" *ngIf="mobile.errors?.['required']">
+        Mobile no. is required.
+      </div>
+    </div>
+    <!-- <div class="container1">
+      <input
+        type="text"
+        name="source"
+        class="form-control"
+        id="exampleInputSource"
+        placeholder="Please Enter Source"
+        [(ngModel)]="bookTicket.source"
+        #source="ngModel"
+        required
+      />
+    </div>
+    <div
+      *ngIf="source.invalid && (source.dirty || source.touched)"
+      class="alert"
+    >
+      <div class="errorInvalid" *ngIf="source.errors?.['required']">
+        Source is required.
+      </div>
+    </div> -->
+    <!-- <div class="container1">
+      <input
+        type="text"
+        name="destination"
+        class="form-control"
+        id="exampleInputDestination"
+        placeholder="Please Enter Destination"
+        [(ngModel)]="bookTicket.destination"
+        #destination="ngModel"
+        required
+      />
+    </div>
+    <div
+      *ngIf="destination.invalid && (destination.dirty || destination.touched)"
+      class="alert"
+    >
+      <div class="errorInvalid" *ngIf="destination.errors?.['required']">
+        Destination is required.
+      </div>
+    </div> -->
+    <!-- <div class="container1">
+      <input
+        type="text"
+        name="airline"
+        class="form-control"
+        id="exampleInputAirline"
+        placeholder="Please Enter airline"
+        [(ngModel)]="bookTicket.airline"
+        #airline="ngModel"
+        required
+      />
+    </div>
+    <div *ngIf="airline.invalid && (airline.dirty || airline.touched)"
+    class="alert">
+  <div class="errorInvalid" *ngIf="airline.errors?.['required']">
+    Airline Name is required.
+  </div></div> -->
+    <div class="container1">
+      <input
+        type="datetime-local"
+        name="dateOfJourney"
+        class="form-control"
+        id="exampleInputDateOfJourney"
+        placeholder="Enter Date Of Journey"
+        [(ngModel)]="bookTicket.dateOfJourney"
+        #dateOfJourney="ngModel"
+        required
+      />
+    </div>
+    <div
+      *ngIf="
+        dateOfJourney.invalid && (dateOfJourney.dirty || dateOfJourney.touched)
+      "
+      class="alert"
+    >
+      <div class="errorInvalid" *ngIf="dateOfJourney.errors?.['required']">
+        Journey Date is required.
+      </div>
+    </div>
+    <div class="container1">
+      <input
+        type="email"
+        name="emailID"
+        class="form-control"
+        id="exampleInputEmailID"
+        placeholder="Please Enter emailID"
+        [(ngModel)]="bookTicket.emailID"
+        #emailID="ngModel"
+        required
+      />
+    </div>
+    <div
+      *ngIf="emailID.invalid && (emailID.dirty || emailID.touched)"
+      class="alert"
+    >
+      <div class="errorInvalid" *ngIf="emailID.errors?.['required']">
+        Email is required.
+      </div>
+    </div>
+    <div class="container1">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        id="btn-register"
+        [disabled]="!bookForm.valid"
+      >
+        Book
+      </button>
+    </div>
+  </form>
+</div>
+<div class="download"><input type="button" value="Download Ticket"  *ngIf="isShown" class="btn btn-success" (click)="SavePDF()"></div><br>
+<div class="cards-layout" >
+  <div class="card mb-3" style="width: 30rem" *ngIf="isShown">
+    <img
+      class="card-img-top"
+      src="https://media.istockphoto.com/vectors/fully-booked-sticker-fully-booked-square-isolated-sign-fully-booked-vector-id1252369113?k=20&m=1252369113&s=170667a&w=0&h=NMjKngxN3qCsCxVvqx4lZYjz16H2uEROKCCdT4y_jj4="
+      alt="BookedTicket"
+    />
+    <div class="card-body" #content  >
+    <h3 class="card-title"><b>PNR:-</b>{{ book.bookingPNR }}</h3>
+      <h3 class="card-title"><b>Passenger Name:-</b> {{ book.bookingPassengerName}}</h3>
+      <h3 class="card-title"><b>Mobile No.:- </b>{{ book.mobile }}</h3>
+       <h3 class="card-title"><pre><b>Airline:-</b> {{ book.airline }}   <b>Flight Code:- </b>{{ book.airlineCode }}</pre></h3>
+      <h3 class="card-title"><pre><b>Source:- </b>{{ book.source }}   <b>Destination:</b> {{ book.destination }}</pre></h3>
+      <h3 class="card-title"><b>Date Of Journey:- </b> {{ book.dateOfJourney }}</h3>
+      <h3 class="card-title"><b>Date Of Booking:- </b> {{ book.bookingDate }}</h3>
+      <h3 class="card-title"><b>Email ID:- </b>{{ book.emailID }}   <b>Ticket Status:- </b> {{ book.ticketStatus }}</h3>
+      <!-- <h3><input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()"></h3> -->
+    </div>
+  </div>
+</div>
+

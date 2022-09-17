@@ -1,0 +1,13 @@
+<br>
+<div class="cards-layout" *ngFor="let booking of book">
+    <mat-card class="card-position">
+      <mat-card-subtitle><b>Course Name:- </b> {{ booking.courseName }}</mat-card-subtitle>
+      <mat-card-subtitle><b>Course Code:- </b> {{ booking.courseCode }}</mat-card-subtitle>
+      <mat-card-subtitle><b>Course Technology:- </b> {{ booking.technology }}</mat-card-subtitle>
+      <mat-card-subtitle><b>Course Duration:- </b> {{ booking.courseDuration }}</mat-card-subtitle>
+      <mat-card-subtitle><b>Course Start Date:- </b> {{ booking.courseStartDate }}</mat-card-subtitle>
+      <mat-card-subtitle><b>Course End date:- </b> {{ booking.courseEndDate }}</mat-card-subtitle>
+      <mat-card-subtitle><b>Course Description:- </b> {{ booking.courseDescription }}</mat-card-subtitle>
+      <mat-card-subtitle><b>To launch the course </b> <a target="_blank" href="{{booking.courseLaunchURL}}">Click here</a></mat-card-subtitle>
+    </mat-card>
+    <br>

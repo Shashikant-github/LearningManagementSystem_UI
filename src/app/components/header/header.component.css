@@ -1,0 +1,23 @@
+#headerLink{  
+    display: flex;
+    align-items: center;
+ justify-content:space-around;
+    text-transform: capitalize;
+}
+a:hover{
+background:rgb(196, 114, 114); 
+border-radius: 5px;
+}
+a{
+  color:rgb(255, 255, 255);
+  font-size: large;
+  font-weight: 400;
+}
+#item{
+  color:rgb(8, 22, 92);
+  font-size: larger;
+  font-weight: 500;
+ 
+}
+
+

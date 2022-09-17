@@ -1,0 +1,34 @@
+.cards-layout{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+} 
+
+.card-img-top {
+    width: 100%;
+    height: 6vw;
+    object-fit: cover;
+}
+p{text-align: center;
+    color: crimson;
+}
+.card{
+       border-radius: 5px; 
+}
+.card:hover{
+    background-color: rgb(196, 114, 114)}
+
+.cover{
+   
+        background-image:    url("src\lms.jpg");
+        background-size:     cover;                      /* <------ */
+        background-repeat:   no-repeat;
+        background-position: center center;  
+        background-size: 100% 100%;
+        width: 91em;
+        height: 27em;
+        margin-top: 5px;
+                      /* optional, center the image */
+
+}
+

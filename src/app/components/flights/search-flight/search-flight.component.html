@@ -1,0 +1,137 @@
+<!-- <P>{{customExMessage}}</P> -->
+<br>
+<h3 class="searchForm">
+    <form class="row g-3" #SearchForm="ngForm" (ngSubmit)="SearchFlights(SearchForm)">
+        <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="EnterbookingSource"
+        placeholder="Technology"
+        required
+        name="bookingSource"
+        [(ngModel)]="bookingSource"
+        #bookingSource1="ngModel"
+      /> 
+      <div *ngIf="bookingSource1.invalid && (bookingSource1.dirty ||bookingSource1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingSource1.errors?.['required']">
+      Technology is required.
+    </div></div></div>
+    <!-- <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="EnterbookingDestination"
+        placeholder="TO Where"
+        required
+        name="bookingDestination"
+        [(ngModel)]="bookingDestination"
+        #bookingDestination1="ngModel"
+      /> 
+      <div *ngIf="bookingDestination1.invalid && (bookingDestination1.dirty ||bookingDestination1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingDestination1.errors?.['required']">
+      To is required.
+    </div></div></div> -->
+    <div class="col-auto">
+    <button type="submit" class="btn btn-primary" [disabled]="!SearchForm.valid" >
+      Search Course
+    </button>
+  </div>   
+</form>
+</h3>
+<h1 style="text-align: center;color:indianred;font-size:larger;font-weight:bold;">{{noFlight}}</h1>
+<br>
+<br>
+<br>
+<h3 class="searchForm">
+    <form class="row g-3" #SearchForm2="ngForm" (ngSubmit)="SearchCourse(SearchForm2)">
+        <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="technology"
+        placeholder="Technology"
+        required
+        name="technology"
+        [(ngModel)]="technology"
+        #bookingSource1="ngModel"
+      /> 
+      <div *ngIf="bookingSource1.invalid && (bookingSource1.dirty ||bookingSource1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingSource1.errors?.['required']">
+      Technology is required.
+    </div></div></div>
+      <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="startDate"
+        placeholder="Start Date"
+        required
+        name="startDate"
+        [(ngModel)]="startDate"
+        #bookingSource2="ngModel"
+      /> 
+      <div *ngIf="bookingSource2.invalid && (bookingSource2.dirty ||bookingSource2.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingSource2.errors?.['required']">
+      Start Date is required.
+    </div></div></div>
+      <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="endDate"
+        placeholder="End Date"
+        required
+        name="endDate"
+        [(ngModel)]="endDate"
+        #bookingSource3="ngModel"
+      /> 
+      <div *ngIf="bookingSource3.invalid && (bookingSource3.dirty || bookingSource3.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingSource3.errors?.['required']">
+      End Date is required.
+    </div></div></div>
+    <!-- <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="EnterbookingDestination"
+        placeholder="TO Where"
+        required
+        name="bookingDestination"
+        [(ngModel)]="bookingDestination"
+        #bookingDestination1="ngModel"
+      /> 
+      <div *ngIf="bookingDestination1.invalid && (bookingDestination1.dirty ||bookingDestination1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingDestination1.errors?.['required']">
+      To is required.
+    </div></div></div> -->
+    <div class="col-auto">
+    <button type="submit" class="btn btn-primary" [disabled]="!SearchForm2.valid" >
+      Search Course by Duration
+    </button>
+  </div>   
+</form>
+</h3>
+<h1 style="text-align: center;color:indianred;font-size:larger;font-weight:bold;">{{noCourse}}</h1>
+<br>
+<br>
+   
+
+    <div class="cards-layout" *ngFor="let course of courseRes">
+      <mat-card class="card-position">
+        <mat-card-subtitle><b>Course Name:- </b> {{ course.courseName }}</mat-card-subtitle>
+        <mat-card-subtitle><b>Course Code:- </b> {{ course.courseCode }}</mat-card-subtitle>
+        <mat-card-subtitle><b>Course Technology:- </b> {{ course.technology }}</mat-card-subtitle>
+        <mat-card-subtitle><b>Course Duration:- </b> {{ course.courseDuration }}</mat-card-subtitle>
+        <mat-card-subtitle><b>Course Start Date:- </b> {{ course.courseStartDate }}</mat-card-subtitle>
+        <mat-card-subtitle><b>Course End date:- </b> {{ course.courseEndDate }}</mat-card-subtitle>
+        <mat-card-subtitle><b>Course Description:- </b> {{ course.courseDescription }}</mat-card-subtitle>
+        <mat-card-subtitle><b>Course URL:- </b> <a target="_blank">{{ course.courseLaunchURL }}</a></mat-card-subtitle>
+      </mat-card>
+      <br>

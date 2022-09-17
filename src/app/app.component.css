@@ -1,0 +1,29 @@
+
+.container1{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  overflow-wrap: normal;
+}
+.header1{
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 3px 5px;
+  background:rgba(117, 190, 218, 0.6);
+  }
+.content1{
+  flex-shrink: 1;
+  flex-grow: 1;
+  padding: 3px 5px;
+  position: relative;
+  overflow-y:auto;
+}
+.footer1{
+  flex-shrink: 0;
+  flex-grow: 0;
+  background:rgba(117, 190, 218, 0.6);
+  padding: 3px 15px;
+
+}
